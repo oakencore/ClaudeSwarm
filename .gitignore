@@ -1,0 +1,58 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# User-specific
+.user-config/
+local-settings.md
+
+# Development and Testing Files
+TEST_SUB_AGENT_ACTIVATION.md
+SUB_AGENT_FEATURES.md
+/dev/
+/testing/
+*.test.md
+*.dev.md
+TESTING_GUIDE.md
+
+# Development scripts
+dev.sh
+test.sh
+local-*.sh
+verify-release.sh
+
+# Release management
+RELEASE_CHECKLIST.md
