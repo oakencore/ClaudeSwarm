@@ -1,218 +1,170 @@
-
 # ClaudeSwarm 🐝
-**35 specialised Claude Code agents that coordinate to build production-ready software**
 
-**Warning: This is an experimental project! Expect High Token Usage**
+**Transform your ideas into production ready software with a swarm of 35 specialized AI agents.**
+
+**⚠️ Warning: This is an experimental project. Expect high token usage. Use responsibly and monitor your API costs.**
 
 ## What is ClaudeSwarm?
-ClaudeSwarm helps you transform your ideas into production ready code through the use of specialised AI agents working in coordinated phases.
 
-ClaudeSwarm offers two ways to utilise AI for coding:
-- **🔄 Systematic Development**: Step-by-step workflows with quality checks for complete projects.
-- **🎯 Expert Coordination**: Intelligent selection of specialist agents for complex tasks.
+ClaudeSwarm is a workflow system built on Claude Code's Sub-Agents feature. It assembles a team of 35 specialised AI agents that collaborate to convert your project ideas into fully functional, production ready code. Think of it as an AI powered development team: orchestrators plan and coordinate, while experts in frameworks, optimisation, and quality assurance handle the details.
 
-### Why Use It?
-- **Rapid Development**: Transform ideas into working code within hours.
-- **Reliable Quality**: Automatic checks ensure code meets standards.
-- **Specialist Skills**: Agents with deep knowledge of specific frameworks, not just general assistance.
-- **Intelligent Selection**: Detects technical requirements and selects appropriate agents.
-- **Production Ready**: Includes security, performance optimisation, and documentation.
+At its core, ClaudeSwarm automates the software development lifecycle. You provide a high level idea like "Build a task management app with real-time collaboration" and the agents break it down, select the right tools, write code, test it, and ensure it's secure and documented. No more juggling multiple tools or manual handoffs; it's all coordinated seamlessly.
+
+ClaudeSwarm supports two primary modes:
+- **🔄 Systematic Development**: A structured, phase based workflow with built in quality gates for end-to-end projects.
+- **🎯 Expert Coordination**: Intelligent agent selection for complex, multi faceted tasks, automatically routing to specialists based on your needs.
+
+Whether you're a solo developer accelerating prototypes or a team tackling enterprise scale projects, ClaudeSwarm supercharges your productivity while maintaining high standards.
+
+## Why ClaudeSwarm?
+
+- **Specialised Expertise**: Agents aren't generalists,they're deep experts in frameworks like Django, React, or Rails, ensuring best practices are followed. Can't find the right specialist, create your own and add them to the team!
+- **Intelligent Automation**: Orchestrators detect your tech stack and routes tasks to the right agents, reducing manual decision making.
+- **Built in Quality**: Automatic code reviews, security scans, performance optimisation, testing and documentation.
+- **Flexible and Scalable**: Handles everything from quick fixes to full stack applications, with configurable quality thresholds (e.g., 75% for prototypes, 95% for enterprise systems).
 
 ## Quick Start
-**Prerequisites**: Install and authenticate the Claude Code CLI.
 
-### 1. Install ClaudeSwarm
+Get up and running in minutes. You'll need the Claude Code CLI installed and authenticated (visit [Claude's documentation](https://docs.anthropic.com/claude/reference/getting-started-with-the-api) for setup).
+
+### 1. Clone and Install
 ```bash
 git clone https://github.com/your-username/ClaudeSwarm.git
 cd ClaudeSwarm
-./install.sh
+./install.sh  # Installs dependencies and configures agents
 ```
 
-### 2. Set Up Your Project
+### 2. Configure Your Project
+Navigate to your project directory and let the setup agent prepare everything:
 ```bash
-cd your-project
-claude "use @team-configurator: Setup ClaudeSwarm for this project"
+cd your-project-directory
+claude "use @team-configurator: Set up ClaudeSwarm for this project"
 ```
+This analyses your existing codebase (if any), suggests a tech stack, and initialises the agent swarm.
 
-### 3. Start Building
+### 3. Build Your First Project
+Start with an orchestrator for smart agent selection, it's the easiest way to begin.
 
-**🎯 Smart Agent Selection (Recommended)**
-
-Instead of selecting individual specialists, allow orchestrators to automatically choose the best agents for your project:
-
+**For a complete application (Systematic Mode):**
 ```bash
-# For complex multi-step tasks - analyses your project and selects optimal specialists
-claude "use @tech-lead-orchestrator: Build e-commerce platform with user authentication and payment processing"
-
-# For systematic development with quality gates - manages complete project lifecycle  
-claude "use @spec-orchestrator: Create a task management web application"
+claude "use @spec-orchestrator: Create a task management web app with user authentication, real-time updates, and project collaboration features"
 ```
 
-The orchestrators will:
-- Analyse your requirements and technology stack
-- Automatically select the best specialist agents (Django, React, etc.)
-- Coordinate parallel and sequential execution
-- Provide structured task breakdowns
-
-**⚡ Direct Specialist Selection (Advanced)**
-
-For targeted tasks, you can directly specify framework specialists:
+**For a complex feature addition (Expert Coordination Mode):**
 ```bash
-claude "use @django-api-developer: Build REST API with authentication"  
-claude "use @react-nextjs-expert: Create Next.js app with SSR"
-claude "use @performance-optimizer: Fix slow database queries"
+claude "use @tech-lead-orchestrator: Add payment processing and inventory tracking to my existing e-commerce platform"
 ```
 
-## Agent Selection Guide
+The orchestrator will analyse your request, select relevant specialists (e.g., `@django-api-developer` for backend, `@react-nextjs-expert` for frontend), coordinate their work, and deliver structured outputs like code files, docs, and deployment scripts.
 
-### 🤖 Orchestrators (Let Them Choose For You)
-
-**Start here for most projects** - these agents automatically select and coordinate specialists:
-
-**🎯 `@tech-lead-orchestrator`** - **MUST BE USED** for multi-step development tasks
-- Analyses complex software projects 
-- Automatically selects optimal specialist agents
-- Provides strategic recommendations and task breakdowns
-- Coordinates framework specialists (Django, React, etc.)
-
-**🔄 `@spec-orchestrator`** - Systematic workflow coordination
-- Quality-gated development with structured phases  
-- Project organization and progress tracking
-- Manages complete project lifecycle
-
-### 🛠️ Direct Specialist Selection
-
-**For targeted, single-technology tasks:**
-
-**Framework Specialists:**
-- `@django-api-developer` - Django REST APIs and GraphQL
-- `@react-nextjs-expert` - Next.js with App Router and SSR
-- `@rails-api-developer` - Rails APIs and Active Record
-
-**Quality & Performance:**
-- `@code-reviewer` - Security-aware code review
-- `@performance-optimizer` - Database and system optimization
-- `@documentation-specialist` - Comprehensive documentation
-
-**Analysis & Setup:**
-- `@project-analyst` - Technology stack detection and analysis
-- `@team-configurator` - Project setup automation
-
-## Agent Categories
-ClaudeSwarm comprises 35 agents organised into these groups:
-- **Orchestrators (3)**: Manage workflows and select agents (e.g., tech-lead-orchestrator).
-- **Workflow Agents (7)**: Handle planning, coding, testing, and reviews.
-- **Framework Specialists (13)**: Experts in Django, Rails, Laravel, React, Vue.
-- **Universal Experts (4)**: For general backend, frontend, APIs, and Tailwind CSS.
-- **Core Team (4)**: For code reviews, performance, documentation, and analysis.
-- **Architecture & Utility (4)**: For advanced design, UI/UX, and refactoring.
-
-## How It Works
-
-### Two Development Approaches
-
-**🔄 Systematic Development** (spec-orchestrator)
-```
-Project → Planning → Development → Validation → Production
-          ↓         ↓             ↓
-      Requirements  Implementation  Security
-      Architecture  Testing        Documentation  
-      Task Planning               Quality Gates
+For targeted tasks, call specialists directly:
+```bash
+claude "use @performance-optimizer: Optimise slow database queries in my Django app"
 ```
 
-**🎯 Expert Coordination** (tech-lead-orchestrator)  
-```
-Complex Task → Technology Analysis → Agent Selection → Execution
-                ↓                    ↓                ↓
-            Stack Detection      Specialist Routing   Parallel Work
-            Requirements         Dependency Planning   Integration
-```
+## How ClaudeSwarm Works
 
-### Quality Assurance
+ClaudeSwarm mimics a real development team, with agents communicating via Claude Code's sub-agent system. Here's the breakdown:
 
-**Configurable Quality Thresholds**:
-- **75%** - Rapid prototyping and MVPs
-- **85%** - Production applications  
-- **95%** - Enterprise and financial systems
+### Core Components
+- **Orchestrators**: High level coordinators that plan, select agents, and manage workflows.
+- **Specialists**: Framework experts (e.g., Django, React) and utility agents (e.g., for optimisation or reviews).
+- **Workflow Engine**: Handles parallel/sequential tasks, quality gates, and integration.
 
-**Automated Quality Gates**:
-- Planning completeness validation
-- Code quality and security scanning  
-- Performance benchmarking
-- Documentation and deployment readiness
+### The Two Modes in Action
+
+**🔄 Systematic Development** (Led by `@spec-orchestrator`):
+This mode follows a gated pipeline for reliable, end-to-end builds:
+1. **Planning Phase**: Gather requirements, design architecture, and break into tasks.
+2. **Development Phase**: Specialists code implementations, handle testing, and integrate features.
+3. **Validation Phase**: Run security scans, performance benchmarks, and code reviews.
+4. **Production Phase**: Generate documentation, deployment guides, and optimizations.
+
+**🎯 Expert Coordination** (Led by `@tech-lead-orchestrator`):
+For dynamic tasks, this mode intelligently adapts:
+1. Analyse the request and detect tech needs (e.g., "This requires React for UI and Django for API").
+2. Select and route to optimal agents (e.g., parallel work on frontend and backend).
+3. Coordinate dependencies, merge outputs, and iterate based on feedback.
+
+Under the hood, agents use Claude's API for reasoning, code generation, and collaboration, ensuring cohesive results.
+
+### Agent Categories (35 Total)
+- **Orchestrators (3)**: `@tech-lead-orchestrator`, `@spec-orchestrator`, `@team-configurator` – Plan and delegate.
+- **Workflow Agents (7)**: Handle planning, coding, testing, refactoring, and more.
+- **Framework Specialists (13)**: Deep dives into Django, Rails, Laravel, React, Vue, etc.
+- **Universal Experts (4)**: General backend/frontend, APIs, and styling (e.g., Tailwind CSS).
+- **Core Team (4)**: `@code-reviewer`, `@performance-optimizer`, `@documentation-specialist`, `@project-analyst`.
+- **Architecture & Utility (4)**: For UI/UX design, system architecture, and legacy code analysis (e.g., `@code-archaeologist`).
+
+**Pro Tip**: Always start with an orchestrator unless you have a very specific, isolated task.
+
+## Quality Assurance
+
+ClaudeSwarm embeds quality at every step:
+- **Automated Gates**: Validate planning completeness, scan for vulnerabilities, benchmark performance, and check deployment readiness.
+- **Thresholds**: Set levels like 85% for production apps—agents iterate until met.
+- **Best Practices**: Enforces secure coding, efficient designs, and comprehensive testing.
 
 ## Usage Examples
 
-**Web Application Development**:
-```bash
-claude "use @spec-orchestrator: Create task management app with user accounts, project collaboration, and real-time updates"
-```
+Here are real world scenarios:
 
-**API Development**:
-```bash
-claude "use @tech-lead-orchestrator: Build REST API for inventory management with authentication and reporting"
-```
+- **Full-Stack Web App**:
+  ```bash
+  claude "use @spec-orchestrator: Build a social media dashboard with user profiles, real-time feeds, and analytics"
+  ```
+  *Output*: Complete codebase with React frontend, Django backend, tests, and Docker setup.
 
-**Performance Optimisation**:
-```bash
-claude "use @performance-optimizer: Analyse and optimise database queries in Django application"
-```
+- **API Enhancement**:
+  ```bash
+  claude "use @tech-lead-orchestrator: Add OAuth authentication and GraphQL endpoints to my Rails API"
+  ```
+  *Output*: Updated API code, security review, and integration guide.
 
-**Legacy System Analysis**:
-```bash
-claude "use @code-archaeologist: Document and analyse inherited PHP e-commerce system"
-```
+- **Optimisation Task**:
+  ```bash
+  claude "use @performance-optimizer: Identify and fix bottlenecks in my Laravel e-commerce database"
+  ```
+  *Output*: Optimised queries, profiling report, and before/after benchmarks.
 
-## Documentation
+- **Legacy Analysis**:
+  ```bash
+  claude "use @code-archaeologist: Analyze and document this inherited PHP monolith for modernization"
+  ```
+  *Output*: Architecture diagrams, refactor recommendations, and migration plan.
 
-### Getting Started
-- **[Quick Start Guide](docs/quick-start.md)** - 2-minute setup and first project
-- **[Cheat Sheet](CHEATSHEET.md)** - Quick command reference
-- **[Usage Examples](EXAMPLES.md)** - Real-world project examples
+## Documentation and Resources
 
-### Advanced Guides  
-- **[Agent Reference](docs/agent-reference.md)** - Complete guide to all 36 agents
-- **[Agent Selector](templates/agent-selector.md)** - Choose the right agent for your task
-- **[Workflows](docs/workflows.md)** - Development patterns and examples
-- **[Best Practices](docs/best-practices.md)** - Expert recommendations
+Dive deeper with these guides:
+- **[Quick Start Guide](docs/quick-start.md)**: From zero to first build in 2 minutes.
+- **[Cheat Sheet](CHEATSHEET.md)**: Command shortcuts and agent quick-reference.
+- **[Agent Reference](docs/agent-reference.md)**: Detailed profiles for all 35 agents.
+- **[Workflows Guide](docs/workflows.md)**: Advanced patterns for custom projects.
+- **[Best Practices](docs/best-practices.md)**: Tips for optimal results and cost management.
+- **[Examples Repo](EXAMPLES.md)**: Downloadable project templates and case studies.
 
 ## Getting Help
 
-### 🚀 Quick Agent Selection
-
-**Most Common Use Cases:**
-- **Any complex/multi-step task**: `@tech-lead-orchestrator` (allow it to select specialists)
-- **New systematic project**: `@spec-orchestrator` (quality-gated workflow)
-- **Performance issues**: `@performance-optimizer`
-- **Code review required**: `@code-reviewer`
-- **Legacy system analysis**: `@code-archaeologist`
-
-**Pro Tip**: When in doubt, start with `@tech-lead-orchestrator` - it will analyse your requirements and route to the best specialists automatically.
-
-### Common Patterns
-```bash
-# Complete web application
-claude "use @spec-orchestrator: Create [description] with [features]"
-
-# Targeted improvements  
-claude "use @tech-lead-orchestrator: Add [feature] to existing [project type]"
-
-# Quick fixes
-claude "use @[specialist]: [specific task]"
-```
+- **Stuck?** Start with `@tech-lead-orchestrator`—it'll guide you.
+- **Community**: Join discussions on GitHub issues or our Discord (link coming soon).
+- **Common Pattern**:
+  ```bash
+  claude "use @orchestrator: [Your idea or task description]"
+  ```
+- **FAQ**: Check [docs/faq.md](docs/faq.md) for token usage tips and troubleshooting.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request to discuss proposed changes.
+Fork the repo, make improvements (e.g., new agents or workflows), and submit a pull request.
 
-## Acknowledgements  
+## Acknowledgements
 
-Inspired and built upon https://github.com/zhsama/claude-sub-agent and https://github.com/vijaythecoder/awesome-claude-agents
+Built with inspiration from [claude-sub-agent](https://github.com/zhsama/claude-sub-agent) and [awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents). Thanks to the Anthropic team for Claude Code.
 
+## License
 
-## Licence
-
-MIT Licence - see [LICENCE](LICENSE) for details.
+MIT License—see [LICENSE](LICENSE) for details. Free to use, modify, and share.
 
 ---
 
+Ready to swarm? Clone the repo and start building today! If this README helped, star the project on GitHub. 🚀
