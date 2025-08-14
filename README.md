@@ -1,6 +1,6 @@
 # ClaudeSwarm 🐝
 
-**Transform your ideas into production ready software with a swarm of 35 specialized AI agents.**
+**Transform your ideas into production ready software with a swarm of 35 specialised AI agents.**
 
 **⚠️ Warning: This is an experimental project. Expect high token usage. Use responsibly and monitor your API costs.**
 
