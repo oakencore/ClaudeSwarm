@@ -10,7 +10,6 @@ capabilities:
   - Agent routing and selection
   - Quality gate orchestration
 tools: Read, Grep, Glob, LS, Bash, Task, TodoWrite
-model: opus
 complexity: complex
 specialization: technical-leadership
 usage: "Use @tech-lead-orchestrator when you need to coordinate multiple agents for complex development tasks"

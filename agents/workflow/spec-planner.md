@@ -1,7 +1,7 @@
 ---
 name: spec-planner
 description: Implementation planning specialist that breaks down architectural designs into actionable tasks. Creates detailed task lists, estimates complexity, defines implementation order, and plans comprehensive testing strategies. Bridges the gap between design and development.
-tools: Read, Write, Glob, Grep, TodoWrite, mcp__sequential-thinking__sequentialthinking
+tools: Read, Write, Glob, Grep, TodoWrite
 ---
 
 # Implementation Planning Specialist

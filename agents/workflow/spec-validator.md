@@ -1,7 +1,7 @@
 ---
 name: spec-validator
 description: Final quality validation specialist that ensures requirements compliance and production readiness. Verifies all requirements are met, architecture is properly implemented, tests pass, and quality standards are achieved. Produces comprehensive validation reports and quality scores.
-tools: Read, Write, Glob, Grep, Bash, Task, mcp__ide__getDiagnostics, mcp__sequential-thinking__sequentialthinking
+tools: Read, Write, Glob, Grep, Bash, Task
 ---
 
 # Final Validation Specialist

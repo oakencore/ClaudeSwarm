@@ -6,8 +6,8 @@ Complete reference for all ClaudeSwarm agents, organized by category and use cas
 
 | Category | Count | Purpose |
 |----------|-------|---------|
-| [Orchestrators](#orchestrators) | 3 | Coordinate complex workflows and agent selection |
-| [Workflow Agents](#workflow-agents) | 7 | Systematic development with quality gates |
+| [Orchestrators](#orchestrators) | 4 | Coordinate complex workflows and agent selection |
+| [Workflow Agents](#workflow-agents) | 6 | Systematic development with quality gates |
 | [Framework Specialists](#framework-specialists) | 13 | Technology-specific expertise |
 | [Universal Experts](#universal-experts) | 4 | Framework-agnostic development |
 | [Core Team](#core-team) | 4 | Quality assurance and analysis |
@@ -48,8 +48,8 @@ claude "use @spec-orchestrator with quality threshold 90: Create task management
 ```
 
 ### project-analyst
-**Purpose**: Technology stack detection and intelligent routing  
-**When to Use**: Project setup, technology migration, stack analysis  
+**Purpose**: Technology stack detection and intelligent routing
+**When to Use**: Project setup, technology migration, stack analysis
 **Special Features**:
 - Automatic framework detection
 - Agent capability mapping
@@ -59,6 +59,19 @@ claude "use @spec-orchestrator with quality threshold 90: Create task management
 **Example Usage**:
 ```bash
 claude "use @project-analyst: Analyze this codebase and recommend optimal development approach"
+```
+
+### team-configurator
+**Purpose**: Project setup automation and agent configuration
+**When to Use**: Initial project setup, configuring ClaudeSwarm for a new codebase
+**Special Features**:
+- Detects technology stack automatically
+- Selects optimal specialist agents
+- Writes AI Team Configuration section in CLAUDE.md
+
+**Example Usage**:
+```bash
+claude "use @team-configurator: Set up ClaudeSwarm for this project"
 ```
 
 ## Workflow Agents
@@ -100,12 +113,6 @@ Systematic development specialists that work in coordinated phases.
 **Quality Focus**: Test coverage and quality assurance
 
 ### Validation Phase
-
-#### code-reviewer
-**Purpose**: Code review and best practices validation  
-**Inputs**: Complete codebase and tests  
-**Outputs**: Review reports, improvement recommendations  
-**Quality Focus**: Code quality and security standards
 
 #### spec-validator
 **Purpose**: Final production readiness assessment  

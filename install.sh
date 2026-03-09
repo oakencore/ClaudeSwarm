@@ -121,13 +121,7 @@ verify_installation() {
         exit 1
     fi
     
-    # Test Claude Code can see the agents
-    print_status "Testing Claude Code agent detection..."
-    if claude /agents &>/dev/null; then
-        print_success "Claude Code can access installed agents"
-    else
-        print_warning "Could not verify Claude Code agent access"
-    fi
+    print_status "Agents installed to $HOME/.claude/agents/"
 }
 
 # Show post-install instructions
