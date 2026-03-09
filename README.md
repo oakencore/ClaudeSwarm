@@ -1,139 +1,47 @@
-# ClaudeSwarm
+# ClaudeSwarm (Archived)
 
-**A swarm of 35 specialised AI agents for Claude Code.**
+**This project is no longer maintained.** Claude Code has natively adopted the multi-agent orchestration pattern that ClaudeSwarm pioneered, making this project redundant.
 
-> **Warning:** This is an experimental project. Expect high token usage. Use responsibly and monitor your API costs.
+## What Happened?
 
-## What is ClaudeSwarm?
+ClaudeSwarm assembled 35 specialised AI agents (orchestrators, framework specialists, workflow agents, quality reviewers) that collaborated via Claude Code's sub-agent system to convert ideas into production-ready software.
 
-ClaudeSwarm is a collection of 35 AI agent definitions for Claude Code's sub-agent system. It assembles a development team: orchestrators plan and coordinate, while specialists handle framework-specific implementation, code review, performance optimisation, and more.
+Since then, **Claude Code has built all of these agents directly into the product**. Every agent this project defined -- `tech-lead-orchestrator`, `spec-orchestrator`, `code-reviewer`, `code-archaeologist`, `performance-optimizer`, all the Django/Rails/Laravel/React/Vue specialists, and more -- now ships as a native `subagent_type` in Claude Code's Agent tool.
 
-It supports two modes:
-- **Systematic Development**: A structured, phase-based workflow with quality gates for end-to-end projects.
-- **Expert Coordination**: Intelligent agent selection for complex, multi-technology tasks.
+You don't need to install anything. Just use Claude Code.
 
-## Quick Start
+## What To Use Instead
 
-### 1. Clone and Install
+Claude Code's built-in agents are available out of the box. Examples:
 
 ```bash
-git clone https://github.com/oakencore/ClaudeSwarm.git
-cd ClaudeSwarm
-./install.sh
+# These just work now, no setup required
+claude "use the code-reviewer agent to review this PR"
+claude "use the spec-orchestrator to plan and build a task management app"
+claude "use the tech-lead-orchestrator to coordinate adding payments to my app"
+claude "use the performance-optimizer to find bottlenecks in my database queries"
 ```
 
-### 2. Configure Your Project
+For custom agents beyond the built-ins, Claude Code supports user-defined agents at `~/.claude/agents/*.md` and project-level agents at `.claude/agents/*.md`. See the [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code) for details.
 
-```bash
-cd your-project-directory
-claude "use @team-configurator: Set up ClaudeSwarm for this project"
-```
+## What Might Still Be Useful
 
-### 3. Start Building
+While every agent in this project now has a built-in equivalent, a few things here don't ship with Claude Code and could still serve as inspiration:
 
-**Complete application (Systematic Mode):**
-```bash
-claude "use @spec-orchestrator: Create a task management web app with authentication and real-time updates"
-```
+- **The `agent-workflow` skill** ([commands/agent-workflow.md](commands/agent-workflow.md)) -- a quality-gated pipeline that chains `spec-analyst` -> `spec-architect` -> `spec-developer` -> `spec-validator` -> `spec-tester` with automatic iteration when quality scores fall below 95%. Claude Code's built-in agents exist independently; this skill wires them into an automated workflow. You'd need to install it as a [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code) at `~/.claude/skills/agent-workflow/SKILL.md` (not `commands/` as this project's install script does -- that path is outdated).
 
-**Complex feature addition (Expert Mode):**
-```bash
-claude "use @tech-lead-orchestrator: Add payment processing to my e-commerce platform"
-```
+- **The CLAUDE.md orchestration template** ([CLAUDE.md](CLAUDE.md)) -- documents how to coordinate agents with structured handoffs, quality gate thresholds, and phased workflows. Could be adapted for your own project's CLAUDE.md to guide Claude on when to use which built-in agent.
 
-**Direct specialist:**
-```bash
-claude "use @performance-optimizer: Optimise slow database queries in my Django app"
-```
+- **The workflow documentation** ([docs/workflows.md](docs/workflows.md), [docs/best-practices.md](docs/best-practices.md)) -- patterns for parallel agent execution, dependency management, cost control, and quality iteration that apply regardless of whether agents are custom or built-in.
 
-## How It Works
+## Historical Context
 
-### Systematic Development (led by `@spec-orchestrator`)
-
-A gated pipeline for reliable end-to-end builds:
-
-1. **Planning** (20-25%): Requirements, architecture, task breakdown
-2. **Development** (60-65%): Implementation, testing, integration
-3. **Validation** (15-20%): Code review, security scan, documentation
-
-### Expert Coordination (led by `@tech-lead-orchestrator`)
-
-Dynamic routing for multi-technology tasks:
-
-1. Analyse the request and detect technology needs
-2. Select and route to optimal specialist agents
-3. Coordinate dependencies and merge outputs
-
-### Agent Categories (35 Total)
-
-| Category | Count | Examples |
-|----------|-------|---------|
-| Orchestrators | 3 | tech-lead-orchestrator, team-configurator, project-analyst |
-| Workflow | 7 | spec-orchestrator, spec-analyst, spec-architect, spec-planner, spec-developer, spec-tester, spec-validator |
-| Framework Specialists | 13 | django-*, rails-*, laravel-*, react-*, vue-* |
-| Universal Experts | 4 | backend-developer, frontend-developer, api-architect, tailwind-css-expert |
-| Quality & Architecture | 6 | code-reviewer, performance-optimizer, code-archaeologist, documentation-specialist, senior-backend-architect, senior-frontend-architect |
-| Design & Utility | 2 | ui-ux-master, refactor-agent |
-
-**Tip:** Always start with an orchestrator unless you have a very specific, isolated task.
-
-## Quality Assurance
-
-ClaudeSwarm uses configurable quality gates:
-
-- **Prototype/MVP**: 75% threshold
-- **Production**: 85-90% threshold
-- **Enterprise**: 95% threshold
-
-Gates validate planning completeness, code quality, test coverage (>80%), security vulnerabilities, and deployment readiness.
-
-## Usage Examples
-
-```bash
-# Full-Stack Web App
-claude "use @spec-orchestrator: Build a social media dashboard with user profiles and analytics"
-
-# API Enhancement
-claude "use @tech-lead-orchestrator: Add OAuth authentication and GraphQL endpoints to my Rails API"
-
-# Performance Optimisation
-claude "use @performance-optimizer: Identify and fix bottlenecks in my Laravel database"
-
-# Legacy Analysis
-claude "use @code-archaeologist: Analyze and document this inherited PHP monolith for modernization"
-```
-
-## Documentation
-
-- **[Quick Start Guide](docs/quick-start.md)**: Setup, configuration, and cheat sheet
-- **[Agent Reference](docs/agent-reference.md)**: Profiles for all 35 agents
-- **[Workflows Guide](docs/workflows.md)**: Workflow patterns and best practices
-
-## Installation Options
-
-**Standard install** (copies agents to `~/.claude/agents/`):
-```bash
-./install.sh
-```
-
-**Development mode** (symlinks for auto-updates):
-```bash
-./install.sh --symlink
-```
-
-**Uninstall:**
-```bash
-./uninstall.sh
-```
-
-## Contributing
-
-Fork the repo, make improvements, and submit a pull request.
+This project was built in mid-2025 when Claude Code's sub-agent system was new and had no built-in specialist agents. ClaudeSwarm demonstrated that a coordinated swarm of domain experts with quality gates could dramatically improve development output. The patterns it established -- orchestrator-driven routing, three-phase quality gates, structured agent handoffs -- were validated by their adoption into Claude Code itself.
 
 ## Acknowledgements
 
-Built with inspiration from [claude-sub-agent](https://github.com/zhsama/claude-sub-agent) and [awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents).
+Built with inspiration from [claude-sub-agent](https://github.com/zhsama/claude-sub-agent) and [awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents). Thanks to the Anthropic team for Claude Code and for making this project unnecessary.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License -- see [LICENSE](LICENSE) for details.
